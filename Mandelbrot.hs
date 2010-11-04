@@ -64,12 +64,12 @@ compute_Parallel_Mandelbrot width height = par (forceList g) ( pseq (forceList f
           diffX      = 3.0 / (width-1)
           diffY      = 2.0 / (height-1)
           mpoints    = map (\(x,y) -> (-2 + x*diffX, -1 + y*diffY)) points
-          mpoints_p1 = take (truncate $ width * height / 2) mpoints
-          mpoints_p2 = drop (truncate $ width * height / 2) mpoints
+          mpoints_p2 = take (truncate $ width * height / 2) mpoints
+          mpoints_p1 = drop (truncate $ width * height / 2) mpoints
           f          = function_f mpoints_p1
           g          = function_f mpoints_p2
 
---function_f computes each element with the function f of a list
+--Function_f computes each element with the function f of a list
 function_f :: [(Double,Double)] -> [Bool]
 function_f list = map (f 1000) list
 
